@@ -1,0 +1,18 @@
+{
+  "_about": "One row per champion: which League animation (.anm in assets/characters/<champ>/skins/base/animations/) plays for each animation role. Roles are what slap_clips maps Slap City's clips to; spell roles are picked by abilities.",
+  "columns": {
+    "champion": "champions.id",
+    "idle": "standing", "walk": "walking", "run": "dashing and running", "air": "jumping and falling",
+    "attack1": "jabs, tilts, grabs", "attack2": "aerials and second hits", "crit": "smash attacks",
+    "spell1": "League Q", "spell2": "League W", "spell3": "League E", "spell4": "League R",
+    "death": "knocked out", "taunt": "taunt and entrance", "victory": "winner screen", "hurt": "flinch, tumble, grabbed"
+  },
+  "rows": [
+    {"champion": "lol_darius", "idle": "darius_idle1", "walk": "darius_run", "run": "darius_run", "air": "darius_idle2", "attack1": "darius_attack1", "attack2": "darius_attack2", "crit": "darius_crit", "spell1": "darius_spell1", "spell2": "darius_spell2", "spell3": "darius_spell3", "spell4": "darius_spell4", "death": "darius_death", "taunt": "darius_taunt", "victory": "darius_dance", "hurt": "darius_channelwindup"},
+    {"champion": "lol_gangplank", "idle": "gangplank_idle1", "walk": "gangplank_run", "run": "gangplank_run", "air": "gangplank_idlein", "attack1": "gangplank_attack1", "attack2": "gangplank_attack2", "crit": "gangplank_crit", "spell1": "gangplank_spell1", "spell2": "gangplank_spell2", "spell3": "gangplank_spell3", "spell4": "gangplank_spell4", "death": "gangplank_death", "taunt": "gangplank_taunt", "victory": "gangplank_dance", "hurt": "gangplank_channel_wndup"},
+    {"champion": "lol_yasuo", "idle": "yasuo_idle1", "walk": "yasuo_run2", "run": "yasuo_run1", "air": "yasuo_idle2", "attack1": "yasuo_attack1", "attack2": "yasuo_attack2", "crit": "yasuo_attack3", "spell1": "yasuo_spell1a", "spell2": "yasuo_spell2", "spell3": "yasuo_spell3", "spell4": "yasuo_spell4", "death": "yasuo_death", "taunt": "yasuo_taunt", "victory": "yasuo_dance_loop", "hurt": "yasuo_channel_windup"},
+    {"champion": "lol_yone", "idle": "yone_idle01", "walk": "yone_walk01", "run": "yone_run01", "air": "yone_homeguard01", "attack1": "yone_attack01", "attack2": "yone_attack02", "crit": "yone_attack03", "spell1": "yone_spell1_a_01", "spell2": "yone_spell2", "spell3": "yone_spell3_spiritin", "spell4": "yone_spell4_in", "death": "yone_death01", "taunt": "yone_taunt", "victory": "yone_dance_loop", "hurt": "yone_channel_in"},
+    {"champion": "lol_jinx", "idle": "jinx_minigun_idle1", "walk": "jinx_minigun_run2", "run": "jinx_minigun_run", "air": "jinx_minigun_idle2", "attack1": "jinx_minigun_attack1", "attack2": "jinx_minigun_attack2", "crit": "jinx_rlauncher_attack1", "spell1": "jinx_rlauncher_attack2", "spell2": "jinx_minigun_spell2", "spell3": "jinx_minigun_spell3", "spell4": "jinx_minigun_spell4", "death": "jinx_minigun_death", "taunt": "jinx_taunt2", "victory": "jinx_dance_loop", "hurt": "jinx_stunned"},
+    {"champion": "lol_fiora", "idle": "fiora_idle1", "walk": "fiora_runwalk", "run": "fiora_run", "air": "fiora_idle3", "attack1": "fiora_attack1", "attack2": "fiora_attack2", "crit": "fiora_crit", "spell1": "fiora_spell1", "spell2": "fiora_spell2", "spell3": "fiora_crit", "spell4": "fiora_channel", "death": "fiora_death", "taunt": "fiora_taunt", "victory": "fiora_dance", "hurt": "fiora_channel_windup"}
+  ]
+}

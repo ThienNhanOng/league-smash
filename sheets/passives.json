@@ -1,0 +1,18 @@
+{
+  "_about": "One row per champion: its League passive, always on in matches.",
+  "columns": {
+    "champion": "champions.id",
+    "passive": "League passive name",
+    "effect": "effects.id (when = passive)",
+    "value": "the effect's number",
+    "sfx": "Wwise sfx event played when the passive triggers (champions.sfxEvents), or none"
+  },
+  "rows": [
+    {"champion": "lol_darius", "passive": "Hemorrhage", "effect": "hemorrhage", "value": 0.5, "sfx": "Play_sfx_Darius_DariusHemoMax_OnBuffActivate"},
+    {"champion": "lol_gangplank", "passive": "Trial by Fire", "effect": "trial_by_fire", "value": 1.5, "sfx": "Play_sfx_Gangplank_GangplankPassiveAttackDoT_OnBuffCast"},
+    {"champion": "lol_yasuo", "passive": "Way of the Wanderer", "effect": "flow", "value": 30, "sfx": "none"},
+    {"champion": "lol_yone", "passive": "Way of the Hunter", "effect": "hunter", "value": 1.2, "sfx": "none"},
+    {"champion": "lol_jinx", "passive": "Get Excited!", "effect": "excited", "value": 1.5, "sfx": "none"},
+    {"champion": "lol_fiora", "passive": "Duelist's Dance", "effect": "vitals", "value": 3, "sfx": "Play_sfx_Fiora_FioraPassiveManager_OnBuffActivate"}
+  ]
+}

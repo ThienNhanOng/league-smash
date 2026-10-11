@@ -1,0 +1,39 @@
+{
+  "_about": "Every ability and passive mechanic in Slap City terms. Each row is one case in Gameplay/Mechanics.cs. Slow and stun use Slap City's own speed bonuses (SetBonusRunSpeed / SetBonusStateSpeed), so they work on any fighter.",
+  "columns": {
+    "id": "referenced by abilities.effects and passives.effect",
+    "when": "hit = when the move's hitbox connects; cast = when the move starts; passive = always on for the champion",
+    "does": "what happens",
+    "value": "meaning of the number after the colon"
+  },
+  "rows": [
+    {"id": "none", "when": "hit", "does": "only the ability's dmg and kb multipliers apply", "value": "unused"},
+    {"id": "outer_edge", "when": "hit", "does": "targets hit at the edge of the swing (farther than value units) take 50% more damage and heal the champion 4%", "value": "edge distance in units"},
+    {"id": "pull", "when": "hit", "does": "the target is launched back toward the champion instead of away", "value": "strength (1 = normal)"},
+    {"id": "slow", "when": "hit", "does": "the target runs at 60% speed", "value": "seconds"},
+    {"id": "stun", "when": "hit", "does": "the target is frozen in place (its moves run at 8% speed)", "value": "seconds"},
+    {"id": "airborne_stun", "when": "hit", "does": "an airborne target is frozen in the air", "value": "seconds"},
+    {"id": "execute", "when": "hit", "does": "knockback doubles when the target is at or above value damage %", "value": "damage % threshold"},
+    {"id": "bleed_execute", "when": "hit", "does": "damage goes up by value for each Hemorrhage stack on the target", "value": "bonus per stack"},
+    {"id": "airborne", "when": "hit", "does": "damage is multiplied against airborne targets", "value": "multiplier"},
+    {"id": "crit", "when": "hit", "does": "a value chance to deal 60% more damage (plays the crit sound)", "value": "chance 0-1"},
+    {"id": "third_knockup", "when": "hit", "does": "every third cast within 4 seconds launches straight up with more knockback", "value": "knockback multiplier on the third cast"},
+    {"id": "ramp", "when": "hit", "does": "each repeat cast within 3 seconds adds value to its damage (up to 4 stacks)", "value": "bonus per stack"},
+    {"id": "missing_health", "when": "hit", "does": "damage grows with the target's damage %: x(1 + target% / value)", "value": "damage % for double damage"},
+    {"id": "echo", "when": "hit", "does": "value% of the damage dealt during the cast hits the targets again 3 seconds later", "value": "percent repeated"},
+    {"id": "dash", "when": "cast", "does": "the champion slides forward as the move starts", "value": "speed multiplier"},
+    {"id": "heal_cast", "when": "cast", "does": "the champion's damage % goes down by value", "value": "percent healed"},
+    {"id": "cleanse", "when": "cast", "does": "removes slows, stuns and bleeds from the champion", "value": "unused (1)"},
+    {"id": "shield", "when": "cast", "does": "damage the champion takes is cut for 1.5 seconds", "value": "percent blocked"},
+    {"id": "parry", "when": "cast", "does": "for value seconds the next hit is fully blocked; the attacker takes the ability's stun and 6% damage", "value": "parry window in seconds"},
+    {"id": "windwall", "when": "cast", "does": "projectiles that would hit the champion are blocked", "value": "seconds"},
+    {"id": "empower", "when": "cast", "does": "the champion's next value hits deal 40% more damage", "value": "number of hits"},
+    {"id": "challenge", "when": "cast", "does": "for 6 seconds the champion deals value times damage and every hit heals 3%", "value": "damage multiplier"},
+    {"id": "hemorrhage", "when": "passive", "does": "every hit adds a bleed stack (max 5, 5 s) dealing 0.5% per stack per second; at 5 stacks the champion gains Noxian Might: 30% more damage for 5 s", "value": "bleed % per stack per second"},
+    {"id": "trial_by_fire", "when": "passive", "does": "after 5 s without landing a hit, the next hit deals 50% more, burns the target (bleed-like, 3 s) and speeds the champion up for 2 s", "value": "damage multiplier"},
+    {"id": "flow", "when": "passive", "does": "moving fills Flow; when full, the next hit taken is cut by half", "value": "units of movement to fill"},
+    {"id": "hunter", "when": "passive", "does": "every second hit deals value times damage", "value": "multiplier"},
+    {"id": "excited", "when": "passive", "does": "when a fighter the champion hit in the last 3 s is knocked out, the champion runs value times faster for 4 s", "value": "run speed multiplier"},
+    {"id": "vitals", "when": "passive", "does": "every 4th hit on the same target strikes a vital: 40% more damage and heals value%", "value": "percent healed"}
+  ]
+}

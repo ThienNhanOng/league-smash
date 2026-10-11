@@ -1,0 +1,22 @@
+# build output
+src/bin/
+src/obj/
+*.user
+.vs/
+
+# release packages and listing media (built by tools/package.ps1; they bundle third-party binaries)
+dist/
+
+# nothing from Slap City or League of Legends is ever committed
+*.wad.client
+*.wem
+*.wav
+*.skn
+*.skl
+*.anm
+*.tex
+*.scb
+slaprift-dump/
+
+# stray empty repository folder
+Smash league of legends/

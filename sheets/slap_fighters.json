@@ -1,0 +1,18 @@
+{
+  "_about": "The Slap City fighters the champions are built on, read from the game's own registry (SmashResources.characters). Verified against BepInEx/slaprift-dump/characters.txt.",
+  "columns": {
+    "id": "Slap City character id",
+    "prefab": "Resources path of the fighter prefab",
+    "name": "display name in Slap City",
+    "specials": "special clips the fighter has (specialneutral, specialforward, specialup, specialdown)",
+    "moves": "the move id that starts each special (neutral, side, up, down), from the fighter's moveset; used to trigger abilities in test runs"
+  },
+  "rows": [
+    {"id": "bcman", "prefab": "characters/BCMan/BCMan", "name": "Business Casual Man", "specials": ["specialneutral", "specialforward", "specialup", "specialdown"], "moves": {"neutral": "spn", "side": "spf", "up": "spu", "down": "spd"}},
+    {"id": "ruby", "prefab": "characters/Ruby/Ruby", "name": "Masked Ruby", "specials": ["specialneutral", "specialforward", "specialup", "specialdown"], "moves": {"neutral": "spn", "side": "spf", "up": "spu", "down": "spd"}},
+    {"id": "fishbunjin", "prefab": "characters/Fishbunjin/Fishbunjin", "name": "Ultra Fishbunjin 3000", "specials": ["specialneutral", "specialforward", "specialup", "specialdown"], "moves": {"neutral": "spn", "side": "spf", "up": "spu", "down": "spd"}},
+    {"id": "goddess", "prefab": "characters/Goddess/Goddess", "name": "Goddess of Explosions", "specials": ["specialneutral", "specialforward", "specialup", "specialdown"], "moves": {"neutral": "spn", "side": "spf", "up": "spu", "down": "spd"}},
+    {"id": "remedy", "prefab": "characters/Remedy/Remedy", "name": "Princess Remedy", "specials": ["specialneutral", "specialforward", "specialup", "specialdown"], "moves": {"neutral": "sp_n", "side": "sp_f", "up": "sp_u", "down": "sp_d"}},
+    {"id": "ittledew", "prefab": "characters/IttleDew/IttleDew", "name": "Ittle Dew", "specials": ["specialneutral", "specialforward", "specialup", "specialdown"], "moves": {"neutral": "nspecial", "side": "fspecial", "up": "uspecial", "down": "dspecial"}}
+  ]
+}

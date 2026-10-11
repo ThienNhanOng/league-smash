@@ -1,0 +1,31 @@
+{
+  "_about": "Every place the mod touches Slap City. Each row is one Harmony patch or plugin system; its code carries the marker // Hook:<id> so preflight can check it exists.",
+  "columns": {
+    "id": "hook id",
+    "target": "game class and method (or system)",
+    "kind": "prefix, postfix or system",
+    "does": "what it changes",
+    "file": "source file implementing it"
+  },
+  "rows": [
+    {"id": "skin-meta", "target": "Smash.LoadedCharacterSkins.EnsureCharacterMeta", "kind": "prefix", "does": "adds each champion as a hidden skin (lol_<name>) of its base fighter before the skin list is built", "file": "src/Game/RosterPatches.cs"},
+    {"id": "skin-load", "target": "Smash.LoadedCharacterSkins.LoadCharacterSkin / TryGetSkin / CharacterSkinLoaded / SkinLoading", "kind": "prefix", "does": "a champion skin loads and uses the base fighter's default skin asset", "file": "src/Game/RosterPatches.cs"},
+    {"id": "roster-slots", "target": "Smash.CSSlotCollection.Awake (via MonoBehaviour start)", "kind": "system", "does": "adds a row of six champion slots with League icons to the character select grid", "file": "src/Game/RosterSlots.cs"},
+    {"id": "select-slot", "target": "Smash.CSPlayerBox.SetCharacter", "kind": "prefix", "does": "a champion slot (base#lol_id) picks the base fighter with the champion skin; other slots clear it", "file": "src/Game/RosterPatches.cs"},
+    {"id": "box-portrait", "target": "Smash.CSPlayerBox.UpdMeta", "kind": "postfix", "does": "player box shows the champion's League loading-screen art and plays its pick voice line", "file": "src/Game/RosterPatches.cs"},
+    {"id": "apply-skin", "target": "Smash.SmashCharacter.ApplySkin", "kind": "postfix", "does": "a fighter spawned with a champion skin gets the League model attached and its own meshes hidden", "file": "src/Game/FighterPatches.cs"},
+    {"id": "anim-driver", "target": "ChampionBody.LateUpdate", "kind": "system", "does": "reads the base fighter's playing clip each frame and plays the mapped League animation on the champion skeleton", "file": "src/Champion/ChampionBody.cs"},
+    {"id": "special-cast", "target": "ChampionBody.LateUpdate (clip change into a special)", "kind": "system", "does": "plays the ability's League sfx and voice line, applies cast effects (dash, shield, heal_cast)", "file": "src/Champion/ChampionBody.cs"},
+    {"id": "hit-effects", "target": "Smash.ResolveCombatBasic.AddHurt", "kind": "prefix", "does": "every champion hit gets its passive and buffs; a special-move hit also gets the ability's multipliers and effects; shields, Flow, parries and Wind Wall act on hits taken", "file": "src/Game/CombatPatches.cs"},
+    {"id": "parry-block", "target": "Smash.ResolveCombatBasic.AddHurt", "kind": "prefix (skip)", "does": "a hit on a parrying champion, or a projectile into Wind Wall, is not registered at all", "file": "src/Game/CombatPatches.cs"},
+    {"id": "mechanics", "target": "Mechanics (ability and passive rules)", "kind": "system", "does": "one case per effects row: what each hit, cast and passive changes", "file": "src/Gameplay/Mechanics.cs"},
+    {"id": "status-tick", "target": "Status (per fighter)", "kind": "system", "does": "bleeds, burns, slows, stuns and echoes on any fighter, applied through Slap City's own damage and speed bonuses each frame", "file": "src/Gameplay/Status.cs"},
+    {"id": "league-objects", "target": "LeagueObjects (tornado, wind wall, barrels, Yone's spirit)", "kind": "system", "does": "spawns the objects sheet's things with League meshes and textures, moves them, and lets them hit, block or snap back", "file": "src/Gameplay/LeagueObjects.cs"},
+    {"id": "league-hit", "target": "GameUpdateAgent.Message (listofhurts)", "kind": "system", "does": "an object's hit is delivered as a Slap City hurt message, so knockback, hitstun, DI and the HUD work as for any hit", "file": "src/Gameplay/LeagueHit.cs"},
+    {"id": "hit-after", "target": "Smash.ResolveCombatBasic.AddHurt", "kind": "postfix", "does": "restores the hitbox properties changed by hit-effects and applies heals", "file": "src/Game/CombatPatches.cs"},
+    {"id": "ko-voice", "target": "ChampionBody (death role entered)", "kind": "system", "does": "plays the champion's knockout voice line once per KO", "file": "src/Champion/ChampionBody.cs"},
+    {"id": "league-files", "target": "LeagueFiles (WAD reader)", "kind": "system", "does": "finds the League install from SLAPRIFT_LEAGUE (set by Melty) or the Riot Client's install record and reads champion files in place", "file": "src/League/LeagueFiles.cs"},
+    {"id": "audio-cache", "target": "AudioLibrary", "kind": "system", "does": "decodes the champion's Wwise audio from the player's install with the bundled vgmstream into a local cache and loads it as AudioClips", "file": "src/Audio/AudioLibrary.cs"},
+    {"id": "test-mode", "target": "TestMode (Melty test runs)", "kind": "system", "does": "during a Melty test run, starts a local match with champions and reports checks", "file": "src/Dev/TestMode.cs"}
+  ]
+}

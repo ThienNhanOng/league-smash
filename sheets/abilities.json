@@ -1,0 +1,47 @@
+{
+  "_about": "One row per champion special move: the base fighter's Slap City special (same controls, same hitboxes) becomes a League ability with its League animation, sounds, voice line and League mechanics. No cooldowns or mana (design choice 1).",
+  "columns": {
+    "champion": "champions.id",
+    "slot": "Slap City special: neutral, side, up, down",
+    "key": "League key: Q, W, E or R",
+    "ability": "League ability name",
+    "role": "animations column played during the move",
+    "sfx": "Wwise sfx event played when the move starts (champions.sfxEvents)",
+    "vo": "Wwise voice event played when the move starts (champions.voEvents)",
+    "sfxProc": "Wwise sfx event played when the ability's special effect triggers (outer-edge hit, parry, third-hit knock-up...), or none",
+    "dmg": "damage multiplier on this move's hits",
+    "kb": "knockback multiplier on this move's hits",
+    "effects": "effects applied by this ability, each effects.id:value"
+  },
+  "rows": [
+    {"champion": "lol_darius", "slot": "neutral", "key": "Q", "ability": "Decimate", "role": "spell1", "sfx": "Play_sfx_Darius_DariusCleave_OnCast", "vo": "Play_vo_Darius_DariusCleave_cast3D", "sfxProc": "Play_sfx_Darius_DariusCleave_hit_outter", "dmg": 1.0, "kb": 1.0, "effects": ["outer_edge:1.6"]},
+    {"champion": "lol_darius", "slot": "side", "key": "E", "ability": "Apprehend", "role": "spell3", "sfx": "Play_sfx_Darius_DariusAxeGrabCone_OnCast", "vo": "Play_vo_Darius_Attack2DGeneral", "sfxProc": "Play_sfx_Darius_DariusAxeGrabCone_OnHit", "dmg": 0.9, "kb": 0.7, "effects": ["pull:1", "slow:1.0"]},
+    {"champion": "lol_darius", "slot": "up", "key": "W", "ability": "Crippling Strike", "role": "spell2", "sfx": "Play_sfx_Darius_DariusNoxianTacticsONHAttack_OnCast", "vo": "Play_vo_Darius_DariusNoxianTacticsONH_cast3D", "sfxProc": "Play_sfx_Darius_DariusNoxianTacticsONHAttack_OnHit", "dmg": 1.2, "kb": 1.0, "effects": ["slow:1.5"]},
+    {"champion": "lol_darius", "slot": "down", "key": "R", "ability": "Noxian Guillotine", "role": "spell4", "sfx": "Play_sfx_Darius_DariusExecute_OnCast", "vo": "Play_vo_Darius_DariusExecute_cast3D", "sfxProc": "Play_sfx_Darius_DariusExecute_OnHit", "dmg": 1.1, "kb": 1.0, "effects": ["bleed_execute:0.2", "execute:100"]},
+
+    {"champion": "lol_gangplank", "slot": "neutral", "key": "Q", "ability": "Parrrley", "role": "spell1", "sfx": "Play_sfx_Gangplank_GangplankQProceed_OnCast", "vo": "Play_vo_Gangplank_GangplankQProceed_cast3D", "sfxProc": "Play_sfx_Gangplank_GangplankQProceedCrit_OnCast", "dmg": 1.15, "kb": 1.0, "effects": ["crit:0.35"]},
+    {"champion": "lol_gangplank", "slot": "side", "key": "E", "ability": "Powder Keg", "role": "spell3", "sfx": "Play_sfx_Gangplank_GangplankE_OnCast", "vo": "Play_vo_Gangplank_GangplankE_cast3D", "sfxProc": "none", "dmg": 1.0, "kb": 1.3, "effects": ["slow:1.5"]},
+    {"champion": "lol_gangplank", "slot": "up", "key": "W", "ability": "Remove Scurvy", "role": "spell2", "sfx": "Play_sfx_Gangplank_GangplankW_OnCast", "vo": "Play_vo_Gangplank_GangplankW_cast3D", "sfxProc": "none", "dmg": 1.0, "kb": 1.0, "effects": ["cleanse:1", "heal_cast:8"]},
+    {"champion": "lol_gangplank", "slot": "down", "key": "R", "ability": "Cannon Barrage", "role": "spell4", "sfx": "Play_sfx_Gangplank_GangplankR_OnCast", "vo": "Play_vo_Gangplank_GangplankR_cast3D", "sfxProc": "none", "dmg": 1.2, "kb": 1.1, "effects": ["slow:2.0"]},
+
+    {"champion": "lol_yasuo", "slot": "neutral", "key": "Q", "ability": "Steel Tempest", "role": "spell1", "sfx": "Play_sfx_Yasuo_YasuoQW_OnCast", "vo": "Play_vo_Yasuo_YasuoQ2_cast3D", "sfxProc": "Play_sfx_Yasuo_YasuoQ3W_OnCast", "dmg": 1.1, "kb": 1.0, "effects": ["third_knockup:1.4"]},
+    {"champion": "lol_yasuo", "slot": "side", "key": "E", "ability": "Sweeping Blade", "role": "spell3", "sfx": "Play_sfx_Yasuo_YasuoDashWrapper_cast", "vo": "Play_vo_Yasuo_Attack2DGeneral", "sfxProc": "none", "dmg": 1.0, "kb": 1.0, "effects": ["dash:1.3", "ramp:0.25"]},
+    {"champion": "lol_yasuo", "slot": "up", "key": "R", "ability": "Last Breath", "role": "spell4", "sfx": "Play_sfx_Yasuo_YasuoRDummySpell_OnCast", "vo": "Play_vo_Yasuo_Attack2DGeneral", "sfxProc": "none", "dmg": 1.0, "kb": 1.0, "effects": ["airborne:1.6", "airborne_stun:0.6"]},
+    {"champion": "lol_yasuo", "slot": "down", "key": "W", "ability": "Wind Wall", "role": "spell2", "sfx": "Play_sfx_Yasuo_YasuoWMovingWall_OnCast", "vo": "Play_vo_Yasuo_Taunt3DGeneral", "sfxProc": "Play_sfx_Yasuo_YasuoWindWallBuff_missilecast", "dmg": 1.0, "kb": 1.0, "effects": ["windwall:2.5"]},
+
+    {"champion": "lol_yone", "slot": "neutral", "key": "Q", "ability": "Mortal Steel", "role": "spell1", "sfx": "Play_sfx_Yone_YoneQ_OnCast", "vo": "Play_vo_Yone_YoneQ_cast3D", "sfxProc": "Play_sfx_Yone_YoneQ3_OnCast", "dmg": 1.1, "kb": 1.0, "effects": ["third_knockup:1.4"]},
+    {"champion": "lol_yone", "slot": "side", "key": "E", "ability": "Soul Unbound", "role": "spell3", "sfx": "Play_sfx_Yone_YoneE_cast", "vo": "Play_vo_Yone_YoneE_cast3D", "sfxProc": "Play_sfx_Yone_YoneE_return_cast", "dmg": 1.0, "kb": 1.0, "effects": ["dash:1.3", "echo:35"]},
+    {"champion": "lol_yone", "slot": "up", "key": "R", "ability": "Fate Sealed", "role": "spell4", "sfx": "Play_sfx_Yone_YoneR_OnCast", "vo": "Play_vo_Yone_YoneR_cast3D", "sfxProc": "none", "dmg": 1.1, "kb": 0.8, "effects": ["pull:1", "stun:0.5"]},
+    {"champion": "lol_yone", "slot": "down", "key": "W", "ability": "Spirit Cleave", "role": "spell2", "sfx": "Play_sfx_Yone_YoneW_OnCast", "vo": "Play_vo_Yone_YoneW_cast3D", "sfxProc": "none", "dmg": 1.1, "kb": 1.0, "effects": ["shield:40"]},
+
+    {"champion": "lol_jinx", "slot": "neutral", "key": "Q", "ability": "Switcheroo!", "role": "spell1", "sfx": "Play_sfx_Jinx_JinxQAttack_OnCast", "vo": "Play_vo_Jinx_Attack2DGeneral", "sfxProc": "none", "dmg": 1.0, "kb": 1.25, "effects": ["none:0"]},
+    {"champion": "lol_jinx", "slot": "side", "key": "W", "ability": "Zap!", "role": "spell2", "sfx": "Play_sfx_Jinx_JinxW_OnCast", "vo": "Play_vo_Jinx_JinxW_cast3D", "sfxProc": "none", "dmg": 1.1, "kb": 1.0, "effects": ["slow:2.0"]},
+    {"champion": "lol_jinx", "slot": "up", "key": "E", "ability": "Flame Chompers!", "role": "spell3", "sfx": "Play_sfx_Jinx_JinxE_OnCast", "vo": "Play_vo_Jinx_JinxE_cast3D", "sfxProc": "none", "dmg": 1.0, "kb": 0.8, "effects": ["stun:1.0"]},
+    {"champion": "lol_jinx", "slot": "down", "key": "R", "ability": "Super Mega Death Rocket!", "role": "spell4", "sfx": "Play_sfx_Jinx_JinxR_OnCast", "vo": "Play_vo_Jinx_JinxR_cast3D", "sfxProc": "none", "dmg": 1.0, "kb": 1.0, "effects": ["missing_health:150"]},
+
+    {"champion": "lol_fiora", "slot": "neutral", "key": "Q", "ability": "Lunge", "role": "spell1", "sfx": "Play_sfx_Fiora_FioraQ_OnCast", "vo": "Play_vo_Fiora_Attack2DGeneral", "sfxProc": "none", "dmg": 1.1, "kb": 1.0, "effects": ["dash:1.2"]},
+    {"champion": "lol_fiora", "slot": "side", "key": "E", "ability": "Bladework", "role": "spell3", "sfx": "Play_sfx_Fiora_FioraE_OnCast", "vo": "Play_vo_Fiora_FioraCritAttack_cast3D", "sfxProc": "none", "dmg": 1.0, "kb": 1.1, "effects": ["slow:1.0", "empower:2"]},
+    {"champion": "lol_fiora", "slot": "up", "key": "R", "ability": "Grand Challenge", "role": "spell4", "sfx": "Play_sfx_Fiora_FioraRMark_OnBuffActivate", "vo": "Play_vo_Fiora_Taunt3DGeneral", "sfxProc": "Play_sfx_Fiora_FioraRHeal_buffactivate", "dmg": 1.0, "kb": 1.0, "effects": ["challenge:1.3"]},
+    {"champion": "lol_fiora", "slot": "down", "key": "W", "ability": "Riposte", "role": "spell2", "sfx": "Play_sfx_Fiora_FioraW_OnCast", "vo": "Play_vo_Fiora_FioraW_cast3D", "sfxProc": "Play_sfx_Fiora_FioraWBlockHitSound_OnBuffCast", "dmg": 1.0, "kb": 1.0, "effects": ["parry:0.6", "stun:0.8"]}
+  ]
+}

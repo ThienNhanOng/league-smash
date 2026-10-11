@@ -1,0 +1,30 @@
+{
+  "_about": "Things abilities put into the stage: one row per object. Meshes, models and textures are League's own, read from the champion's WAD (champions.wad). Hits go through Slap City's own hit handling (Gameplay/LeagueHit.cs).",
+  "columns": {
+    "id": "object id",
+    "champion": "champions.id",
+    "trigger": "special slot that creates it (neutral/side/up/down); ':third' = only on every third cast",
+    "kind": "tornado (travels forward, launches what it touches), wall (stands in front, deletes enemy projectiles), barrel (placed, explodes when the champion attacks next to it, chains), spirit (leaves the body behind with a tether, snaps back when it ends)",
+    "model": "League character model folder for kind barrel (assets/characters/<model>/skins/base), or none",
+    "mesh": "League static mesh (.scb) for kind tornado, or none",
+    "tex": "League texture drawn on the object (the model's texture for barrels)",
+    "forward": "how far in front of the champion it appears (units)",
+    "life": "seconds it lasts (barrels: before they go off by themselves)",
+    "radius": "reach of its hit (units); walls: half width",
+    "speed": "units per second it travels (tornado), else 0",
+    "size": "drawn height in units",
+    "dmg": "damage % of its hit, 0 for none",
+    "basekb": "base knockback of its hit (Slap City units; a jab is ~50, a smash ~140)",
+    "kbgain": "knockback growth with the target's damage",
+    "angle": "launch angle in degrees (0 forward, 90 up)",
+    "slow": "seconds the target is slowed after its hit, 0 for none",
+    "sfxSpawn": "Wwise sfx event when it appears, or none",
+    "sfxHit": "Wwise sfx event when it hits, blocks, explodes or snaps back, or none"
+  },
+  "rows": [
+    {"id": "yasuo_tornado", "champion": "lol_yasuo", "trigger": "neutral:third", "kind": "tornado", "model": "none", "mesh": "assets/characters/yasuo/skins/base/particles/yasuo_base_e_big_tonado.scb", "tex": "assets/characters/yasuo/skins/base/particles/yasuo_base_e_tonado.tex", "forward": 1.5, "life": 0.9, "radius": 1.6, "speed": 16, "size": 3.2, "dmg": 9, "basekb": 140, "kbgain": 1.8, "angle": 90, "slow": 0, "sfxSpawn": "none", "sfxHit": "none"},
+    {"id": "yasuo_windwall", "champion": "lol_yasuo", "trigger": "down", "kind": "wall", "model": "none", "mesh": "none", "tex": "assets/characters/yasuo/skins/base/particles/yasuo_base_w_windwall_steam.tex", "forward": 1.8, "life": 2.5, "radius": 0.8, "speed": 0, "size": 5.0, "dmg": 0, "basekb": 0, "kbgain": 0, "angle": 0, "slow": 0, "sfxSpawn": "none", "sfxHit": "Play_sfx_Yasuo_YasuoWindWallBuff_missilecast"},
+    {"id": "gangplank_barrel", "champion": "lol_gangplank", "trigger": "side", "kind": "barrel", "model": "gangplankbarrel", "mesh": "none", "tex": "assets/characters/gangplankbarrel/skins/base/gangplank_base_barrel_cm_tx.tex", "forward": 2.2, "life": 20, "radius": 3.8, "speed": 0, "size": 1.6, "dmg": 14, "basekb": 130, "kbgain": 2.2, "angle": 50, "slow": 1.5, "sfxSpawn": "none", "sfxHit": "Play_sfx_Gangplank_GangplankR_bomb_hit"},
+    {"id": "yone_spirit", "champion": "lol_yone", "trigger": "side", "kind": "spirit", "model": "none", "mesh": "none", "tex": "assets/characters/yone/skins/base/particles/yone_base_e_blue_flame.tex", "forward": 0, "life": 3.0, "radius": 0, "speed": 0, "size": 0.45, "dmg": 0, "basekb": 0, "kbgain": 0, "angle": 0, "slow": 0, "sfxSpawn": "none", "sfxHit": "Play_sfx_Yone_YoneE_return_cast"}
+  ]
+}
